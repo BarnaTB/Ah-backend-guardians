@@ -27,4 +27,4 @@ class ArticleTests(APITestCase):
         response = self.client.post(url, data, format='json')
         response2 = self.client.get(url, format='json')
         self.assertEqual(response2.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 5)
+        self.assertEqual(len(response.data), 8)
