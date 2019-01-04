@@ -20,5 +20,9 @@ class BaseViewTest(APITestCase):
 class LoginUserTest(BaseViewTest):
     def test_login_user_with_correct_details(self):
         url = reverse("login", kwargs={"version": "v1"})
-        params = {"email":"test@mail.com", "password": "testing"}
+        params = {
+            "email":"test@mail.com",
+             "password": "testing"
+             }
         response = self.client.post(url, params)
+        self.assertEqual(response.data['email'], "test@mail.com")
