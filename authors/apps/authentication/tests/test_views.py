@@ -19,7 +19,7 @@ class BaseViewTest(APITestCase):
 
 class LoginUserTest(BaseViewTest):
     def test_login_user_with_correct_details(self):
-        url = reverse("login", kwargs={"version": "v1"})
+        url = reverse("authentication:login")
         params = {
             "email":"test@mail.com",
              "password": "testing"
